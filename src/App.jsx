@@ -2,7 +2,7 @@ import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Login from "./pages/Login";
 import AdminDashboard from "./pages/AdminDashboard";
 import EmployeeDashboard from "./pages/EmployeeDashboard";
-import PrivateRoutes from "./utils/privateRoutes";
+import privateRoutes from "./utils/privateRoutes.jsx";
 import RolebasedRoutes from "./utils/RolebasedRoutes";
 import AdminSummary from "./components/dashboard/AdminSummary";
 
@@ -31,11 +31,11 @@ function App() {
           <Route
             path="/admin-dashboard"
             element={
-              <PrivateRoutes>
+              <privateRoutes>
                 <RolebasedRoutes requiredRole={["admin"]}>
                   <AdminDashboard />
                 </RolebasedRoutes>
-              </PrivateRoutes>
+              </privateRoutes>
             }
           >
             <Route index element={<AdminSummary />}></Route>
@@ -89,11 +89,11 @@ function App() {
           <Route
             path="/employee-dashboard"
             element={
-              <PrivateRoutes>
+              <privateRoutes>
                 <RolebasedRoutes requiredRole={["admin", "employee"]}>
                   <EmployeeDashboard />
                 </RolebasedRoutes>
-              </PrivateRoutes>
+              </privateRoutes>
             }
           >
             <Route index element={<Summary />}></Route>
