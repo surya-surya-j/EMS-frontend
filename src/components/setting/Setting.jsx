@@ -29,7 +29,7 @@ const Settings = () => {
     } else {
       try {
         const response = await axios.put(
-          "https://ems-backend-beige.vercel.app/api/setting/change-password",
+          "https://ems-backend-phi.vercel.app/api/setting/change-password",
           setting,
           {
             headers: {

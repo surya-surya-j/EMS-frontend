@@ -64,7 +64,7 @@ const AuthsContext = ({ children }) => {
         const token = localStorage.getItem("token");
         if (token) {
           const response = await axios.get(
-            "https://ems-backend-beige.vercel.app/api/auth/verify",
+            "https://ems-backend-phi.vercel.app/api/auth/verify",
             {
               headers: {
                 Authorization: `Bearer ${token}`,

@@ -12,7 +12,7 @@ function Table() {
   const fetchLeaves = async () => {
     try {
       const response = await axios.get(
-        "https://ems-backend-beige.vercel.app/api/leave",
+        "https://ems-backend-phi.vercel.app/api/leave",
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,

@@ -14,7 +14,7 @@ function List() {
       try {
         setLoading(true);
         const response = await axios.get(
-          "https://ems-backend-beige.vercel.app/api/employee",
+          "https://ems-backend-phi.vercel.app/api/employee",
           {
             headers: {
               Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -36,7 +36,7 @@ function List() {
                 width={40}
                 className=" rounded-full "
                 alt=""
-                src={`https://ems-backend-beige.vercel.app/${emp.userId.profileImage}`}
+                src={`https://ems-backend-phi.vercel.app/${emp.userId.profileImage}`}
               />
             ),
             action: <EmployeeButtons Id={emp._id} />,
