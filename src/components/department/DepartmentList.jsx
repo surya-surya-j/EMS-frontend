@@ -15,11 +15,14 @@ function DepartmentList() {
   const fetchDepartments = async () => {
     try {
       setLoading(true);
-      const response = await axios.get("http://localhost:3000/api/department", {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-      });
+      const response = await axios.get(
+        "https://ems-backend-beige.vercel.app/api/department",
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
+      );
       if (response.data.success) {
         let sno = 1;
         const data = await response.data.departments.map((dep) => ({

@@ -13,11 +13,14 @@ function List() {
     const fetchEmployees = async () => {
       try {
         setLoading(true);
-        const response = await axios.get("http://localhost:3000/api/employee", {
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
-          },
-        });
+        const response = await axios.get(
+          "https://ems-backend-beige.vercel.app/api/employee",
+          {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          }
+        );
         console.log(response.data.employees[0]);
 
         if (response.data.success) {
@@ -33,7 +36,7 @@ function List() {
                 width={40}
                 className=" rounded-full "
                 alt=""
-                src={`http://localhost:3000/${emp.userId.profileImage}`}
+                src={`https://ems-backend-beige.vercel.app/${emp.userId.profileImage}`}
               />
             ),
             action: <EmployeeButtons Id={emp._id} />,

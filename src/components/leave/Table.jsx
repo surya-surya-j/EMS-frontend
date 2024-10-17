@@ -11,11 +11,14 @@ function Table() {
 
   const fetchLeaves = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/api/leave", {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-      });
+      const response = await axios.get(
+        "https://ems-backend-beige.vercel.app/api/leave",
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
+      );
       console.log(response);
 
       if (response.data.success) {

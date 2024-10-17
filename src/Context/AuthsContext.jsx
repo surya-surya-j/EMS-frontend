@@ -1,15 +1,7 @@
-// import axios from "axios";
-// import { createContext, useContext, useEffect, useState } from "react";
-
 import axios from "axios";
 import { createContext, useContext, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 
-// const userContext = createContext();
 
-// const ContextAuth = ({ children }) => {
-//   const [user, setUser] = useState(null);
-//   const [loading, setLoading] = useState(true);
 
 //   useEffect(() => {
 //     const verifyUser = async () => {
@@ -72,7 +64,7 @@ const AuthsContext = ({ children }) => {
         const token = localStorage.getItem("token");
         if (token) {
           const response = await axios.get(
-            "http://localhost:3000/api/auth/verify",
+            "https://ems-backend-beige.vercel.app/api/auth/verify",
             {
               headers: {
                 Authorization: `Bearer ${token}`,

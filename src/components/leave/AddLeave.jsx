@@ -23,11 +23,15 @@ const AddLeave = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post(`http://localhost:3000/api/leave/add`, leave, {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-      });
+      const response = await axios.post(
+        `https://ems-backend-beige.vercel.app/api/leave/add`,
+        leave,
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
+      );
       console.log(response.data);
       if (response.data.success) {
         navigate(`/employee-dashboard/leaves/${leave.userId}`);

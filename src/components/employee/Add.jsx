@@ -35,7 +35,7 @@ useEffect(() => {
 
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/employee/add",
+        "https://ems-backend-beige.vercel.app/api/employee/add",
         formDataObj,
         {
           headers: {
